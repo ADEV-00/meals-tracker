@@ -6,7 +6,9 @@ export default function ShoppingList({ list }) {
       <h3 className="subheader">Your Shopping List</h3>
       <ul>
         {list.map(item => (
-          <li key={item}>{item}</li>
+          <li key={item} style={{ borderBottom: "1px solid black" }}>
+            {item}
+          </li>
         ))}
       </ul>
     </div>

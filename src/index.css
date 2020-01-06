@@ -123,11 +123,13 @@ li {
 }
 
 .food-input {
-  width: 90%;
+  margin-left: 25%;
+  width: 50%;
   padding: 10px;
   font-size: 1em;
   border: 1px solid #bdbdbd;
   outline: none;
+  border-radius: 20px;
 }
 
 .search {
