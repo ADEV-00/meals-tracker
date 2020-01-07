@@ -9,6 +9,7 @@ import Loading from "react-loading";
 import { fetchRecipes } from "../utils/api";
 import FoodList from "./FoodList";
 import ShoppingList from "./ShoppingList";
+import Tilt from "react-tilt";
 
 class App extends Component {
   state = {
@@ -112,12 +113,17 @@ class App extends Component {
                 {mealOrder.map(meal => (
                   <li key={meal} className="meal">
                     {meals[meal] ? (
-                      <div className="food-item">
-                        <img src={meals[meal].image} alt={meals[meal].label} />
-                        <button onClick={() => remove({ meal, day })}>
-                          Clear
-                        </button>
-                      </div>
+                      <Tilt className="Tilt" options={{ max: 25, scale: 1.2 }}>
+                        <div className="food-item">
+                          <img
+                            src={meals[meal].image}
+                            alt={meals[meal].label}
+                          />
+                          <button onClick={() => remove({ meal, day })}>
+                            Clear
+                          </button>
+                        </div>
+                      </Tilt>
                     ) : (
                       <button
                         onClick={() => this.openFoodModal({ meal, day })}
